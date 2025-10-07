@@ -1,0 +1,24 @@
+ # -----------------------------------------------------------------
+ #  RabbitMQ StandaloneService
+ # -----------------------------------------------------------------
+services:
+  rabbitmq: 
+    image: rabbitmq:management
+    container_name: rabbitmq_message_broker
+    restart: always 
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 5s
+      timeout: 15s
+      retries: 5
+      start_period: 20s
+    networks:
+      - dapr-network
+
+networks:
+  dapr-network:
+    external: true
+    name: dapr-pubsub-network
