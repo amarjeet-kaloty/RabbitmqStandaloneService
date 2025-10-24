@@ -1,0 +1,14 @@
+# Visual Studio Cache/Configuration
+.vs/
+*.user
+*.suo
+
+# Docker Overrides (Usually specific to a dev's local machine)
+docker-compose.override.yml
+
+# Docker Cache files
+**/*.cache
+
+# Build/Obj folders (if applicable)
+[Bb]in/
+[Oo]bj/

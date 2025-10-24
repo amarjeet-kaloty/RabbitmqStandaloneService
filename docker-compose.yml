@@ -1,0 +1,13 @@
+# -----------------------------------------------------------------
+#  RabbitMQ StandaloneService
+# -----------------------------------------------------------------
+services:
+  rabbitmq: 
+    image: rabbitmq:management
+    networks:
+      - dapr-network
+
+networks:
+  dapr-network:
+    external: true
+    name: dapr-pubsub-network
